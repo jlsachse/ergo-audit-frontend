@@ -1,0 +1,45 @@
+.file-upload {
+  margin: 10px 0;
+}
+
+.file-input {
+  visibility: hidden;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+#uploadFile {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 9;
+  opacity: 0;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+}
+
+form {
+  border: 1px solid #3b3b3b;
+}
+
+.form-title {
+  background-color: #3b3b3b;
+  vertical-align: middle;
+}
+
+h2 {
+  color: aliceblue;
+  font-family: monospace;
+  margin: 0;
+}
+
+.upload-label {
+  font-size: 0.9rem;
+}
+
+button:not(.browse-button) {
+  background-color: #3b3b3b;
+  color: aliceblue;
+}

@@ -1,0 +1,46 @@
+<table *ngIf="loaded" mat-table [dataSource]="projects" class="my-2 mat-background-primary">
+
+  <ng-container matColumnDef="rank">
+    <th mat-header-cell class="text-center"  *matHeaderCellDef> Rank </th>
+    <td mat-cell class="text-center" *matCellDef="let element"> {{element.rank}}  </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell class="text-center p-3 px-2 project-name" *matHeaderCellDef> Project </th>
+    <td class="logo project-name" mat-cell *matCellDef="let element" routerLink="/projects/{{element.id}}"><img class="mx-2" src="data:image/png;base64,{{element.logo}}" width="30" alt=""> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="total">
+    <th mat-header-cell class="text-center px-2 fw-bold" *matHeaderCellDef> Total </th>
+    <td mat-cell class="text-center fw-bold" *matCellDef="let element"> {{element.percentage ? element.percentage + '%' : '-' }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="valueProposition">
+    <th mat-header-cell class="text-center overflow-auto px-2" *matHeaderCellDef> Value Proposition </th>
+    <td mat-cell class="text-center p-3" *matCellDef="let element"> {{element.valueProposition ? element.valueProposition + '%' : '-' }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="tokenomics">
+    <th mat-header-cell class="text-center px-2" *matHeaderCellDef> Tokenomics </th>
+    <td mat-cell class="text-center" *matCellDef="let element"> {{element.tokenomics ? element.tokenomics + '%' : '-' }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="team">
+    <th mat-header-cell class="text-center px-2" *matHeaderCellDef> Team </th>
+    <td mat-cell class="text-center" *matCellDef="let element"> {{element.team ? element.team + '%' : '-' }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="community">
+    <th mat-header-cell class="text-center px-2" *matHeaderCellDef> Community </th>
+    <td mat-cell class="text-center" *matCellDef="let element"> {{element.community ? element.community + '%' : '-' }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="regulatory">
+    <th mat-header-cell class="text-center px-2" *matHeaderCellDef> Regulatory </th>
+    <td mat-cell class="text-center" *matCellDef="let element"> {{element.regulatory ? element.regulatory + '%' : '-' }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

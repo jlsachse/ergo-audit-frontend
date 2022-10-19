@@ -1,0 +1,82 @@
+<div class="w-50 mx-auto">
+  <form *ngIf="this.user" class="w-75 mt-5 d-flex flex-row flex-wrap font-monospace mx-auto" (ngSubmit)="onSubmit()">
+    <div class="w-100 text-center form-title p-3">
+      <h2>Choose the project</h2>
+    </div>
+    <div class="form-content p-2 pt-5 w-100 d-flex flex-column">
+      <mat-form-field color="none" class="w-75 mx-auto" appearance="fill">
+        <mat-label>Project</mat-label>
+        <input type="text"
+               placeholder="Pick one"
+               aria-label="Project"
+               matInput
+               [formControl]="projectControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let project of filteredProjects | async" [value]="project">
+            {{project.name}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <button mat-raised-button class="m-3 w-25 mx-auto" type="submit" [disabled]="!this.projectControl.value" disableRipple>Start</button>
+    </div>
+  </form>
+
+  <form *ngIf="!this.user" [formGroup]="userForm" class="w-75 mt-5 d-flex flex-row flex-wrap font-monospace mx-auto" (ngSubmit)="onSubmit()">
+    <div class="w-100 text-center form-title p-3">
+      <h2>Fill your data</h2>
+    </div>
+    <div class="form-content p-2 d-flex flex-row flex-wrap">
+      <mat-form-field class="w-50 p-2">
+        <input matInput
+               required
+               placeholder="Name"
+               formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field class="w-50 p-2">
+        <input type="email" matInput
+               placeholder="Email"
+               formControlName="email">
+        <mat-error *ngIf="userForm.hasError('email')">
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-50 p-2">
+        <input matInput
+               placeholder="Twitter"
+               formControlName="twitter">
+      </mat-form-field>
+
+      <mat-form-field class="w-50 p-2">
+        <input matInput
+               placeholder="Discord"
+               formControlName="discord">
+      </mat-form-field>
+
+      <mat-form-field class="file-upload w-100">
+        <mat-toolbar>
+          <!-- Display files names -->
+          <p class="font-monospace mt-3 upload-label">{{this.userForm.controls['logo'].value ? 'File uploaded' : 'Choose file'}}</p>
+          <input class="file-input" matInput formControlName="logo" readonly name="name"  />
+          <!-- Browse Button -->
+          <button class="w-50 browse-button" mat-flat-button>Browse Logo</button>
+        </mat-toolbar>
+        <!-- Fetch selected filed on change -->
+        <input
+          type="file"
+          #fileInput
+          id="uploadFile"
+          (change)="uploadFileEvt($event)"
+          name="uploadFile"
+          accept="image/*"
+        />
+      </mat-form-field>
+
+      <button mat-raised-button class="m-3 w-25 mx-auto align-self-center" type="submit" disableRipple>Save</button>
+    </div>
+
+  </form>
+
+</div>

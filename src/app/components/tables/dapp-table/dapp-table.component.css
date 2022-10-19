@@ -1,0 +1,25 @@
+table {
+  width: 100%;
+  margin-top: 0px !important;
+}
+
+.logo {
+  cursor: pointer;
+}
+.logo img {
+  vertical-align: middle;
+  border-radius: 20px;
+}
+
+th.mat-header-cell:not(.project-name) {
+  width: 70px !important;
+  vertical-align: middle;
+}
+
+th {
+  background-color: #3b3b3b;
+  color: aliceblue;
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+

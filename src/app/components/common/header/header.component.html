@@ -1,0 +1,10 @@
+<div class="header-container">
+  <ul class="d-flex justify-content-center">
+    <li class="mx-5 my-1 py-2" routerLink="/overview"><img src="/assets/logo-2.png" size="40px" alt=""></li>
+    <li class="m-3 py-2 fs-6" routerLink="/methodology">Methodology</li>
+    <li class="m-3 py-2 fs-6" routerLink="/auditors">Auditors</li>
+    <li class="m-3 py-2 fs-6" routerLink="/start-audit">Start Audit</li>
+    <li class="flex-grow-1"></li>
+    <li class="m-3 p-2 wallet-connector fs-6" (click)="connectWallet()">{{walletAddress ? 'Welcome ' + walletAddress.slice(0,3) + '...' : 'Connect wallet'}}</li>
+  </ul>
+</div>

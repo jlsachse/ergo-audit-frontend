@@ -1,0 +1,283 @@
+<form *ngIf="defiForm" [formGroup]="defiForm"  class="m-5 w-50 mx-auto d-flex flex-column font-monospace">
+  <div class="mb-3 d-flex justify-content-between header">
+    <h3 class="p-3">Project: {{project}}</h3>
+    <h3 class="p-3">Category: {{category}}</h3>
+    <h3 class="p-3">Author: {{author}}</h3>
+  </div>
+  <div class="form-section d-flex flex-column">
+    <h2 class="font-monospace">1. Value Proposition</h2>
+    <p>The Value Proposition section describes the value that a project provides to its users. Based on the problem the
+      project is developed to solve and the potential of the project to solve the problem effectively
+      - better than other industry solutions - a value proposition rating is provided.</p>
+
+    <h3 class="font-monospace">a) Novelty of the solution (max 10 points)</h3>
+    <p>This score evaluates the novelty of the project. Has the project introduced any new innovations that help solve users' problems more efficiently? Is the project a fork?</p>
+    <mat-form-field class="input-points">
+      <input matInput
+             placeholder="points"
+             readonly
+             formControlName="noveltyPoints">
+    </mat-form-field>
+
+    <mat-form-field class="input-answer">
+      <mat-label>Answer</mat-label>
+      <textarea matInput
+                readonly
+                formControlName="noveltyAnswer">
+    </textarea>
+    </mat-form-field>
+
+    <h3>b) Competitiveness within market sector (max 10 points)</h3>
+    <p>This score evaluates the competitiveness of the project in the market in which it operates.
+      This score provides a relative comparison of the project with other projects operating in the same market sector.
+      Metrics for direct comparison with competitors can be used for evaluation (e.g., TVL, trading volume, number of users).</p>
+    <mat-form-field class="input-points">
+      <input matInput
+             placeholder="points"
+             readonly
+             formControlName="competitivenessPoints">
+    </mat-form-field>
+
+    <mat-form-field class="input-answer">
+      <mat-label>Answer</mat-label>
+      <textarea matInput
+                readonly
+                formControlName="competitivenessAnswer">
+    </textarea>
+    </mat-form-field>
+
+    <h3>c) Integrations & Partnerships (max 10 points)</h3>
+    <p>Since crypto is open source, the code of most projects can be easily forked. This score represents part of the "non-falsifiable value".
+      Some indicators are the number of applications built on the project, other companies integrating the project's services, or the number of relevant partnerships.</p>
+    <mat-form-field class="input-points">
+      <input matInput
+             placeholder="points"
+             readonly
+             formControlName="integrationsPoints">
+    </mat-form-field>
+
+    <mat-form-field class="input-answer">
+      <mat-label>Answer</mat-label>
+      <textarea matInput
+                readonly
+                formControlName="integrationsAnswer">
+    </textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="form-section d-flex flex-column">
+    <h2 class="mt-5">2. Tokenomics</h2>
+    <p>The Tokenomics section evaluates the function of a project's token. This includes the token distribution,
+      the functionalities of the token, the ability of the token to incentivize positive behavior in the project,
+      and the ability of the token to capture some of the value created.</p>
+
+    <h3>a) What is the scope of the token's capabilities? (max 10 points)</h3>
+    <p>Is the token useful within the project? Does the token allow holders to participate in management or influence the project in any way? Does it serve other purposes?</p>
+    <mat-form-field class="input-points">
+      <input matInput
+             placeholder="points"
+             readonly
+             formControlName="capabilityPoints">
+    </mat-form-field>
+
+    <mat-form-field class="input-answer">
+      <mat-label>Answer</mat-label>
+      <textarea matInput
+                readonly
+                formControlName="capabilityAnswer">
+    </textarea>
+    </mat-form-field>
+
+    <h3>b) Initial token allocation? (max 10 points)</h3>
+    <p>Token distribution can be an indicator of a healthy project and, if done well, can improve coordination and
+      alignment among different stakeholders. Was the origination/initial distribution fair and balanced?
+      Are tokens widely distributed or is ownership concentrated and targeted to early insiders? Are the vesting schedules aligned with the long-term vision?</p>
+    <mat-form-field class="input-points">
+      <input matInput
+             placeholder="points"
+             readonly
+             formControlName="allocationPoints">
+    </mat-form-field>
+
+    <mat-form-field class="input-answer">
+      <mat-label>Answer</mat-label>
+      <textarea matInput
+                readonly
+                formControlName="allocationAnswer">
+    </textarea>
+    </mat-form-field>
+
+    <h3>c) Continuous token issuance & tokenomics mechanisms (max 10 points)</h3>
+    <p>Most token distribution plans have built-in inflation. In this section, we evaluate the purpose of such continuous token distribution.
+      Is it defensible? Does it contribute to better coordination and alignment of incentives for the project?
+      Does it provide incentives for positive-sum behavior? Do the benefits accrue to all relevant stakeholders or only to select groups?</p>
+    <mat-form-field class="input-points">
+      <input matInput
+             placeholder="points"
+             readonly
+             formControlName="insurancePoints">
+    </mat-form-field>
+
+    <mat-form-field class="input-answer">
+      <mat-label>Answer</mat-label>
+      <textarea matInput
+                readonly
+                formControlName="insuranceAnswer">
+    </textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="form-section d-flex flex-column">
+    <h2 class="mt-5">3. Team</h2>
+    <p>The Team section describes the quality of the team behind the project. In the case of an anon team, the track record of the specific anons involved can be taken into account.</p>
+
+    <h3>a) Is the team credible and public? (max 10 points)</h3>
+    <p>Are the identities of the core contributors and team publicly identified? In the case of anon team members, is there any way to track their background/record?</p>
+    <mat-form-field class="input-points">
+      <input matInput
+             placeholder="points"
+             readonly
+             formControlName="publicTeamPoints">
+    </mat-form-field>
+
+    <mat-form-field class="input-answer">
+      <mat-label>Answer</mat-label>
+      <textarea matInput
+                readonly
+                formControlName="publicTeamAnswer">
+    </textarea>
+    </mat-form-field>
+
+    <h3>b) Does the team have relevant experience? (max 10 points)</h3>
+    <p>Are there any documents or trails available to showcase the track record of the team? Do the team members have relevant backgrounds and skill sets?</p>
+    <mat-form-field class="input-points">
+      <input matInput
+             placeholder="points"
+             readonly
+             formControlName="experienceTeamPoints">
+    </mat-form-field>
+
+    <mat-form-field class="input-answer">
+      <mat-label>Answer</mat-label>
+      <textarea matInput
+                readonly
+                formControlName="experienceTeamAnswer">
+    </textarea>
+    </mat-form-field>
+
+    <h3>c) Is the team able to effectively attract and coordinate resources? (max 10 points)</h3>
+    <p>How effective is the team at attracting and coordinating resources for the benefit of the project? Has the team raised sufficient funding or are there mechanisms in place to attract resources when needed?</p>
+    <mat-form-field class="input-points">
+      <input matInput
+             placeholder="points"
+             readonly
+             formControlName="coordinationTeamPoints">
+    </mat-form-field>
+
+    <mat-form-field class="input-answer">
+      <mat-label>Answer</mat-label>
+      <textarea matInput
+                readonly
+                formControlName="coordinationTeamAnswer">
+    </textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="form-section d-flex flex-column">
+    <h2 class="mt-5">4. Community</h2>
+    <p>The Community section describes the quality of the community behind the project. How active and motivated the community is. What role the community plays in the development of the project.</p>
+
+
+    <h3>a) How big is tje community of the project? (max 10 points)</h3>
+    <p>Which channels support the project and how many members are there?</p>
+    <mat-form-field class="input-points">
+      <input matInput
+             placeholder="points"
+             readonly
+             formControlName="communityChannelsPoints">
+    </mat-form-field>
+
+    <mat-form-field class="input-answer">
+      <mat-label>Answer</mat-label>
+      <textarea matInput
+                readonly
+                formControlName="communityChannelsAnswer">
+    </textarea>
+    </mat-form-field>
+
+    <h3>b) What role the community plays in the development of the project? (max 10 points)</h3>
+    <p>Whether some strategic decision-making is delegated to the community? Are there any initiatives from the community being implemented in the project?</p>
+    <mat-form-field class="input-points">
+      <input matInput
+             placeholder="points"
+             readonly
+             formControlName="communityRolePoints">
+    </mat-form-field>
+
+    <mat-form-field class="input-answer">
+      <mat-label>Answer</mat-label>
+      <textarea matInput
+                readonly
+                formControlName="communityRoleAnswer">
+    </textarea>
+    </mat-form-field>
+
+    <h3>c) How active and motivated the community is? (max 10 points)</h3>
+    <p>Does the project hold community events or thematic discussions? Does the project distribute any rewards for active community members?</p>
+    <mat-form-field class="input-points">
+      <input matInput
+             placeholder="points"
+             readonly
+             formControlName="communityMotivationPoints">
+    </mat-form-field>
+
+    <mat-form-field class="input-answer">
+      <mat-label>Answer</mat-label>
+      <textarea matInput
+                readonly
+                formControlName="communityMotivationAnswer">
+    </textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="form-section d-flex flex-column"><h2 class="mt-5">5. Regulatory</h2>
+    <p>The Regulatory section describes the scope and quality of the regulatory environment affecting the project.
+      To ensure functionality, security, and legality, the project should meet regulatory requirements or be limited
+      to enabling services for users willing to operate outside the traditional regulatory environment.</p>
+
+    <h3>a) Does the project have any legal accountability? (max 10 points)</h3>
+    <p>Does the project have any form of legal accountability? Can users and partners hold the project accountable in case of a breach of the agreement?</p>
+    <mat-form-field class="input-points">
+      <input matInput
+             placeholder="points"
+             readonly
+             formControlName="accountabilityPoints">
+    </mat-form-field>
+
+    <mat-form-field class="input-answer">
+      <mat-label>Answer</mat-label>
+      <textarea matInput
+                readonly
+                formControlName="accountabilityAnswer">
+    </textarea>
+    </mat-form-field>
+
+    <h3>b) What is the quality of the legal jurisdiction? (max 10 points)</h3>
+    <p>If the project is a legal entity, what is the quality of the jurisdiction in which the entity is located?
+      Is the jurisdiction able to provide the legal framework for the expansion of the project while remaining accountable?</p>
+    <mat-form-field class="input-points">
+      <input matInput
+             placeholder="points"
+             readonly
+             formControlName="jurisdictionQualityPoints">
+    </mat-form-field>
+
+    <mat-form-field class="input-answer">
+      <mat-label>Answer</mat-label>
+      <textarea matInput
+                readonly
+                formControlName="jurisdictionQualityAnswer">
+    </textarea>
+    </mat-form-field>
+  </div>
+</form>

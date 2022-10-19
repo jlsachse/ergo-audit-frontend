@@ -1,0 +1,15 @@
+img {
+  vertical-align: middle;
+  border-radius: 20px;
+}
+
+th.mat-header-cell {
+  vertical-align: middle;
+}
+
+th {
+  background-color: #3b3b3b;
+  color: aliceblue;
+  font-family: monospace;
+  font-size: 1rem;
+}

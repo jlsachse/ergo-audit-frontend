@@ -1,0 +1,32 @@
+.input-points {
+  max-width: 50px;
+}
+
+h2 {
+  border-bottom: 3px solid;
+  font-weight: bold;
+}
+
+h3 {
+  font-weight: bold;
+  font-family: monospace;
+}
+
+form {
+  border: 3px solid;
+}
+
+.form-section {
+  border-bottom: none;
+  border-top: none;
+  padding: 1rem;
+}
+
+.header {
+  background-color: #3b3b3b;
+  color: aliceblue;
+}
+
+h3 {
+  margin: 0;
+}

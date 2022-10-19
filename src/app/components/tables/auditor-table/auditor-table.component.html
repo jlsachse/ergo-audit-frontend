@@ -1,0 +1,29 @@
+<div *ngIf="loaded" class="m-5">
+  <table mat-table [dataSource]="users" class="w-50 mx-auto mat-background-primary">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th class="px-5" mat-header-cell *matHeaderCellDef> Name </th>
+      <td class="py-3" mat-cell class="mx-auto" *matCellDef="let element"><img class="mx-2" src="data:image/png;base64,{{element.logo}}" width="30" alt=""> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="experience">
+      <th class="text-center" mat-header-cell *matHeaderCellDef> Exp </th>
+      <td class="py-3 text-center" mat-cell *matCellDef="let element"> {{element.experience}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="twitter">
+      <th class="text-center" mat-header-cell *matHeaderCellDef> Twitter </th>
+      <td class="py-3 text-center" mat-cell *matCellDef="let element">{{element.twitter}}</td>
+    </ng-container>
+
+    <tr class="text-center" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr class="px-3" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
